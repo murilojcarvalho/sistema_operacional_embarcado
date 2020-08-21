@@ -23,11 +23,10 @@ include('config_db.php');
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 	
-		$content =  "<div align=\"left\">
-						<table>
-							<tr>
-								<th>ID</th>
-								<th>NOME</th>
+		$content =  "<div>
+						<table class=\"w3-table-all\">
+							<tr class=\"w3-blue\">
+								<th>SENSOR</th>
 								<th>VALOR</th>
 								<th>DATA E HORA</th>
 							</tr>";    
@@ -37,10 +36,9 @@ include('config_db.php');
 	    while($row = $result->fetch_assoc()) 
 	    {        
 	        $content .= "<tr>
-	        				<th>" . $row["id"] . "</th>
-	        			 	<th>" . $row["sensor_name"] . "</th> 
-	        			 	<th>" . $row["sensor_value"] . "</th>
-	        			 	<th>" . $row["sensor_datetime"] . "</th>
+	        			 	<td>" . $row["sensor_name"] . "</td> 
+	        			 	<td>" . $row["sensor_value"] . "</td>
+	        			 	<td>" . $row["sensor_datetime"] . "</td>
 	        			  </tr>";
 	    }
 	    $content .= 	"</table>

@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html>
-<style>
-table,th,td {
-  border : 1px solid black;
-  border-collapse: collapse;
-}
-th,td {
-  padding: 5px;
-}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- <style>
+  table {
+    font-family: "Comic Sans MS", cursive, sans-serif
+</style> -->
+
 <body>
 
 <h2>The XMLHttpRequest Object</h2>
 
 <br>
-<div id="txtHint"></div>
+<div class="w3-container" id="txtHint"></div>
 
 <script>
 setInterval("showSensor()",1000);
@@ -26,7 +24,7 @@ function showSensor() {
       document.getElementById("txtHint").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "test_ajax.php", true);
+  xhttp.open("GET", "read_db.php", true);
   xhttp.send();
 }
 </script>

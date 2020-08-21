@@ -18,8 +18,8 @@ body {font-family: "Roboto", sans-serif}
 
 <nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card w3-border" style="z-index:3;width:250px;" id="mySidebar">
   <a class="w3-bar-item w3-button w3-border-bottom w3-large w3-red" href="https://eletronica.sp.senai.br/"><b>SENAI</b></a>
-  <a class="w3-bar-item w3-button" href="#atuadores">Atuadores</a>
   <a class="w3-bar-item w3-button" href="#sensores">Sensores</a>
+  <a class="w3-bar-item w3-button" href="#atuadores">Atuadores</a>
   <a class="w3-bar-item w3-button" href="#diagrama_sistema">Diagrama do Sistema</a>
   <a class="w3-bar-item w3-button" href="#sobre">Sobre o projeto</a>
   <a class="w3-bar-item w3-button w3-hide-large w3-large" href="javascript:void(0)" onclick="w3_close()"><i class="fa fa-remove"></i></a>
@@ -40,31 +40,21 @@ body {font-family: "Roboto", sans-serif}
 
 <div class="w3-container" style="padding:32px">
 
-<div id="atuadores">
-<h3 class="w3-center">&nbsp</h3>
-<h3 class="w3-center">&nbsp</h3>
-</div>
-<div class="w3-panel w3-sand w3-padding-16 w3-card">
-<h3 class="w3-center">Atuadores</h3>
-<div class="w3-content" style="max-width:800px">
-<a href="tryw3css_templates_band.htm" target="_blank"  title="Band Demo"><img src="img_temp_band.jpg" style="width:98%;margin:20px 0" alt="Band Template"></a><br>
-<div class="w3-row">
-  <div class="w3-col m6">
-    <a href="tryw3css_templates_band.htm" target="_blank" class="w3-button w3-padding-large w3-dark-grey" style="width:98.5%">Demo</a>
-  </div>
-  <div class="w3-col m6">
-    <a href="w3css_templates.asp" class="w3-button w3-padding-large w3-dark-grey" style="width:98.5%">More Templates »</a>
-  </div>
-</div>
-</div>
-</div>
-
 <div id="sensores">
 <h3 class="w3-center">&nbsp</h3>
 <h3 class="w3-center">&nbsp</h3>
 </div>
-<div class="w3-panel w3-sand w3-padding-16 w3-card">
+<div class="w3-panel w3-white w3-padding-16">
 <h3 class="w3-center">Sensores</h3>
+<div class="w3-container" id="txtSens"></div>
+</div>
+
+<div id="atuadores">
+<h3 class="w3-center">&nbsp</h3>
+<h3 class="w3-center">&nbsp</h3>
+</div>
+<div class="w3-panel w3-white w3-padding-16">
+<h3 class="w3-center">Atuadores</h3>
 <div class="w3-content" style="max-width:800px">
 <a href="tryw3css_templates_band.htm" target="_blank"  title="Band Demo"><img src="img_temp_band.jpg" style="width:98%;margin:20px 0" alt="Band Template"></a><br>
 <div class="w3-row">
@@ -82,7 +72,7 @@ body {font-family: "Roboto", sans-serif}
 <h3 class="w3-center">&nbsp</h3>
 <h3 class="w3-center">&nbsp</h3>
 </div>
-<div class="w3-panel w3-sand w3-padding-16 w3-card">
+<div class="w3-panel w3-white w3-padding-16">
 <h3 class="w3-center">Diagrama do Sistema</h3>
 <div class="w3-content" style="max-width:800px">
 <a href="tryw3css_templates_band.htm" target="_blank"  title="Band Demo"><img src="img_temp_band.jpg" style="width:98%;margin:20px 0" alt="Band Template"></a><br>
@@ -101,7 +91,7 @@ body {font-family: "Roboto", sans-serif}
 <h3 class="w3-center">&nbsp</h3>
 <h3 class="w3-center">&nbsp</h3>
 </div>
-<div class="w3-panel w3-sand w3-padding-16 w3-card">
+<div class="w3-panel w3-white w3-padding-16">
 <h3 class="w3-center">Sobre</h3>
 <div class="w3-content" style="max-width:800px">
 <a href="tryw3css_templates_band.htm" target="_blank"  title="Band Demo"><img src="img_temp_band.jpg" style="width:98%;margin:20px 0" alt="Band Template"></a><br>
@@ -161,6 +151,18 @@ function myAccordion(id) {
     x.previousElementSibling.className = 
     x.previousElementSibling.className.replace(" w3-theme", "");
   }
+}
+setInterval("showSensor()",1000);
+function showSensor() {
+  var xhttp;  
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("txtSens").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "read_db.php", true);
+  xhttp.send();
 }
 </script>
      
