@@ -39,12 +39,12 @@ def on_message(client, obj, msg):
     cnx = mysql.connector.connect(user=user_mysql, password=pwd_mysql, database=db_mysql)
     cursor = cnx.cursor()
 
-    query = ("DELETE FROM iot WHERE sensor_name = %s")
+    query = ("DELETE FROM sensores WHERE sensor_name = %s")
     dados_recebidos = (msg.topic, )
     print("Deleting data base ...")
     cursor.execute(query, dados_recebidos)
 
-    query = ("INSERT INTO iot"
+    query = ("INSERT INTO sensores"
             "(sensor_name, sensor_value, sensor_datetime) "
             "VALUES (%s, %s, %s)")
     # msg.topico = armazena o tópico

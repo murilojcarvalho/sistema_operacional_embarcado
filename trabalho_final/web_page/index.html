@@ -55,17 +55,16 @@ body {font-family: "Roboto", sans-serif}
 </div>
 <div class="w3-panel w3-white w3-padding-16">
 <h3 class="w3-center">Atuadores</h3>
-<div class="w3-content" style="max-width:800px">
-<a href="tryw3css_templates_band.htm" target="_blank"  title="Band Demo"><img src="img_temp_band.jpg" style="width:98%;margin:20px 0" alt="Band Template"></a><br>
-<div class="w3-row">
-  <div class="w3-col m6">
-    <a href="tryw3css_templates_band.htm" target="_blank" class="w3-button w3-padding-large w3-dark-grey" style="width:98.5%">Demo</a>
-  </div>
-  <div class="w3-col m6">
-    <a href="w3css_templates.asp" class="w3-button w3-padding-large w3-dark-grey" style="width:98.5%">More Templates »</a>
-  </div>
-</div>
-</div>
+<form class="w3-container w3-card-4 w3-center" action="write_db.php" method="get">
+<h4 class="w3-center">LED</h3>
+<select class="w3-select" name="status">
+  <option value="ON">ON</option>
+  <option value="OFF">OFF</option>
+</select>
+<br><br>
+<button type="submit" name="device" value="light" class="w3-button w3-round w3-green">Enviar</button>
+<br><br>
+</form>
 </div>
 
 <div id="diagrama_sistema">

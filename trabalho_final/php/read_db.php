@@ -19,7 +19,7 @@ include('config_db.php');
 	 * Prepara a query sql a fim de selecionar todo o conteúdo 
 	 * da tabela sensores;
 	 */
-	$sql = "SELECT id, sensor_name, sensor_value, sensor_datetime FROM iot";
+	$sql = "SELECT id, sensor_name, sensor_value, sensor_datetime FROM sensores";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 	
