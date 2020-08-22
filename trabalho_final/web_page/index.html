@@ -49,23 +49,27 @@ body {font-family: "Roboto", sans-serif}
 <div class="w3-container" id="txtSens"></div>
 </div>
 
+<br><br><br><br><br><br>
+
 <div id="atuadores">
 <h3 class="w3-center">&nbsp</h3>
 <h3 class="w3-center">&nbsp</h3>
 </div>
 <div class="w3-panel w3-white w3-padding-16">
 <h3 class="w3-center">Atuadores</h3>
-<form class="w3-container w3-card-4 w3-center" action="write_db.php" method="get">
+<form class="w3-container w3-card-4 w3-center" action="write_db.php" method="GET">
 <h4 class="w3-center">LED</h3>
-<select class="w3-select" name="status">
+<select id="status_light" class="w3-select" name="status">
   <option value="ON">ON</option>
   <option value="OFF">OFF</option>
 </select>
 <br><br>
-<button type="submit" name="device" value="light" class="w3-button w3-round w3-green">Enviar</button>
+<button id="device_light" name="device" value="light" class="w3-button w3-round w3-green w3-block" type="submit">Enviar</button>
 <br><br>
 </form>
 </div>
+
+<br><br><br><br><br><br>
 
 <div id="diagrama_sistema">
 <h3 class="w3-center">&nbsp</h3>
@@ -74,17 +78,11 @@ body {font-family: "Roboto", sans-serif}
 <div class="w3-panel w3-white w3-padding-16">
 <h3 class="w3-center">Diagrama do Sistema</h3>
 <div class="w3-content" style="max-width:800px">
-<a href="tryw3css_templates_band.htm" target="_blank"  title="Band Demo"><img src="img_temp_band.jpg" style="width:98%;margin:20px 0" alt="Band Template"></a><br>
-<div class="w3-row">
-  <div class="w3-col m6">
-    <a href="tryw3css_templates_band.htm" target="_blank" class="w3-button w3-padding-large w3-dark-grey" style="width:98.5%">Demo</a>
-  </div>
-  <div class="w3-col m6">
-    <a href="w3css_templates.asp" class="w3-button w3-padding-large w3-dark-grey" style="width:98.5%">More Templates »</a>
-  </div>
+<a href="tryw3css_templates_band.htm" target="_blank"  title="Band Demo"><img src="iot.jpg" style="width:98%;margin:20px 0" alt="IoT"></a><br>
 </div>
 </div>
-</div>
+
+<br><br><br><br><br><br>
 
 <div id="sobre">
 <h3 class="w3-center">&nbsp</h3>
@@ -92,16 +90,9 @@ body {font-family: "Roboto", sans-serif}
 </div>
 <div class="w3-panel w3-white w3-padding-16">
 <h3 class="w3-center">Sobre</h3>
-<div class="w3-content" style="max-width:800px">
-<a href="tryw3css_templates_band.htm" target="_blank"  title="Band Demo"><img src="img_temp_band.jpg" style="width:98%;margin:20px 0" alt="Band Template"></a><br>
-<div class="w3-row">
-  <div class="w3-col m6">
-    <a href="tryw3css_templates_band.htm" target="_blank" class="w3-button w3-padding-large w3-dark-grey" style="width:98.5%">Demo</a>
-  </div>
-  <div class="w3-col m6">
-    <a href="w3css_templates.asp" class="w3-button w3-padding-large w3-dark-grey" style="width:98.5%">More Templates »</a>
-  </div>
-</div>
+<div class="w3-content" style="max-width:800px" align="justify">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
 </div>
 </div>
 
@@ -151,6 +142,7 @@ function myAccordion(id) {
     x.previousElementSibling.className.replace(" w3-theme", "");
   }
 }
+
 setInterval("showSensor()",1000);
 function showSensor() {
   var xhttp;  
@@ -163,6 +155,7 @@ function showSensor() {
   xhttp.open("GET", "read_db.php", true);
   xhttp.send();
 }
+
 </script>
      
 </body>
